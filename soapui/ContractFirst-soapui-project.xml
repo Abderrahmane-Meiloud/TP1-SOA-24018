@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:soapui-project id="b2c3d4e5-0002-4000-8000-000000000001" activeEnvironment="Default" name="ContractFirst" soapui-version="5.10.0" abortOnError="false" runType="SEQUENTIAL" xmlns:con="http://eviware.com/soapui/config">
+  <con:settings/>
+  <con:interface xsi:type="con:WsdlInterface" id="b2c3d4e5-0002-4000-8000-000000000002" wsaVersion="NONE" name="EmpruntSoapBinding" type="wsdl" bindingName="{http://supnum.mr/bib}EmpruntSoapBinding" soapVersion="1_1" anonymous="optional" definition="http://localhost:8080/bib/EmpruntService?wsdl" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+    <con:settings/>
+    <con:definitionCache/><con:endpoints>
+      <con:endpoint>http://localhost:8080/bib/EmpruntService</con:endpoint>
+    </con:endpoints>
+    <con:operation id="b2c3d4e5-0002-4000-8000-000000000003" isOneWay="false" action="http://supnum.mr/bib/emprunterLivre" name="emprunterLivre" bindingOperationName="emprunterLivre" type="Request-Response" inputName="" receivesAttachments="false" sendsAttachments="false" anonymous="optional">
+      <con:settings/>
+    </con:operation>
+  </con:interface>
+  <con:testSuite id="b2c3d4e5-0002-4000-8000-000000000010" name="ContractFirstTests">
+    <con:settings/>
+    <con:runType>SEQUENTIAL</con:runType>
+    <con:testCase id="b2c3d4e5-0002-4000-8000-000000000011" name="01-EmprunterLivre-Succes" failOnError="false" failTestCaseOnErrors="false" keepSession="false" maxResults="0" searchText="" discardOkResults="false">
+      <con:settings/>
+      <con:testStep type="request" name="01-EmprunterLivre-Succes" id="b2c3d4e5-0002-4000-8000-000000000012">
+        <con:settings/>
+        <con:config xsi:type="con:RequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+          <con:interface>EmpruntSoapBinding</con:interface>
+          <con:operation>emprunterLivre</con:operation>
+          <con:request name="01-EmprunterLivre-Succes" id="0129de22-5a47-4a93-b61d-d70d8e53c845">
+            <con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings>
+            <con:encoding>UTF-8</con:encoding>
+            <con:endpoint>http://localhost:8080/bib/EmpruntService</con:endpoint>
+            <con:request><![CDATA[<soap:Envelope xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/" xmlns:bib="http://supnum.mr/bib">
+   <soap:Header/>
+   <soap:Body>
+      <bib:emprunterLivre>
+         <bib:idAdherent>A-117</bib:idAdherent>
+         <bib:isbn>978-2-07-036822-8</bib:isbn>
+      </bib:emprunterLivre>
+   </soap:Body>
+</soap:Envelope>]]></con:request>
+            <con:credentials>
+              <con:authType>No Authorization</con:authType>
+            </con:credentials>
+          </con:request>
+        </con:config>
+      </con:testStep>
+    <con:properties/></con:testCase>
+    <con:testCase id="b2c3d4e5-0002-4000-8000-000000000021" name="02-EmprunterLivre-LivreIndisponible" failOnError="false" failTestCaseOnErrors="false" keepSession="false" maxResults="0" searchText="" discardOkResults="false">
+      <con:settings/>
+      <con:testStep type="request" name="02-EmprunterLivre-LivreIndisponible" id="b2c3d4e5-0002-4000-8000-000000000022">
+        <con:settings/>
+        <con:config xsi:type="con:RequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+          <con:interface>EmpruntSoapBinding</con:interface>
+          <con:operation>emprunterLivre</con:operation>
+          <con:request name="02-EmprunterLivre-LivreIndisponible" id="7514b19b-f713-4410-8ab3-a715eb11abf0">
+            <con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings>
+            <con:encoding>UTF-8</con:encoding>
+            <con:endpoint>http://localhost:8080/bib/EmpruntService</con:endpoint>
+            <con:request><![CDATA[<soap:Envelope xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/" xmlns:bib="http://supnum.mr/bib">
+   <soap:Header/>
+   <soap:Body>
+      <bib:emprunterLivre>
+         <bib:idAdherent>A-117</bib:idAdherent>
+         <bib:isbn>978-2-10-074444-4</bib:isbn>
+      </bib:emprunterLivre>
+   </soap:Body>
+</soap:Envelope>]]></con:request>
+            <con:credentials>
+              <con:authType>No Authorization</con:authType>
+            </con:credentials>
+          </con:request>
+        </con:config>
+      </con:testStep>
+    <con:properties/></con:testCase>
+    <con:testCase id="b2c3d4e5-0002-4000-8000-000000000031" name="03-EmprunterLivre-IsbnInvalide-SchemaValidation" failOnError="false" failTestCaseOnErrors="false" keepSession="false" maxResults="0" searchText="" discardOkResults="false">
+      <con:settings/>
+      <con:testStep type="request" name="03-EmprunterLivre-IsbnInvalide-SchemaValidation" id="b2c3d4e5-0002-4000-8000-000000000032">
+        <con:settings/>
+        <con:config xsi:type="con:RequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+          <con:interface>EmpruntSoapBinding</con:interface>
+          <con:operation>emprunterLivre</con:operation>
+          <con:request name="03-EmprunterLivre-IsbnInvalide-SchemaValidation" id="2d3b92a4-cba6-4d9e-86c6-53f62bf8cbcf">
+            <con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings>
+            <con:encoding>UTF-8</con:encoding>
+            <con:endpoint>http://localhost:8080/bib/EmpruntService</con:endpoint>
+            <con:request><![CDATA[<soap:Envelope xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/" xmlns:bib="http://supnum.mr/bib">
+   <soap:Header/>
+   <soap:Body>
+      <bib:emprunterLivre>
+         <bib:idAdherent>A-117</bib:idAdherent>
+         <bib:isbn>978-2-10</bib:isbn>
+      </bib:emprunterLivre>
+   </soap:Body>
+</soap:Envelope>]]></con:request>
+            <con:credentials>
+              <con:authType>No Authorization</con:authType>
+            </con:credentials>
+          </con:request>
+        </con:config>
+      </con:testStep>
+    <con:properties/></con:testCase>
+    <con:testCase id="b2c3d4e5-0002-4000-8000-000000000041" name="04-EmprunterLivre-NamespaceIncorrect" failOnError="false" failTestCaseOnErrors="false" keepSession="false" maxResults="0" searchText="" discardOkResults="false">
+      <con:settings/>
+      <con:testStep type="request" name="04-EmprunterLivre-NamespaceIncorrect" id="b2c3d4e5-0002-4000-8000-000000000042">
+        <con:settings/>
+        <con:config xsi:type="con:RequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+          <con:interface>EmpruntSoapBinding</con:interface>
+          <con:operation>emprunterLivre</con:operation>
+          <con:request name="04-EmprunterLivre-NamespaceIncorrect" id="9f7bdc12-320f-49f3-88e4-3c0dca7be60b">
+            <con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings>
+            <con:encoding>UTF-8</con:encoding>
+            <con:endpoint>http://localhost:8080/bib/EmpruntService</con:endpoint>
+            <con:request><![CDATA[<soap:Envelope xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/" xmlns:bib="http://supnum.mr/bib">
+   <soap:Header/>
+   <soap:Body>
+      <bib:emprunterLivre>
+         <idAdherent>A-117</idAdherent>
+         <isbn>978-2-07-036822-8</isbn>
+      </bib:emprunterLivre>
+   </soap:Body>
+</soap:Envelope>]]></con:request>
+            <con:credentials>
+              <con:authType>No Authorization</con:authType>
+            </con:credentials>
+          </con:request>
+        </con:config>
+      </con:testStep>
+    <con:properties/></con:testCase>
+  <con:properties/></con:testSuite>
+  <con:properties/>
+  <con:wssContainer/>
+  <con:oAuth2ProfileContainer/>
+  <con:oAuth1ProfileContainer/>
+</con:soapui-project>

@@ -1,0 +1,15 @@
+HTTP status line (captured by SoapUI testrunner): HTTP/1.1 500 Internal Server Error
+Request headers:
+Request Headers: SOAPAction : http://supnum.mr/bib/emprunterLivre
+Connection : Keep-Alive
+User-Agent : Apache-HttpClient/4.5.5 (Java/17.0.12)
+Host : localhost:8080
+Accept-Encoding : gzip,deflate
+Content-Length : 304
+Content-Type : text/xml;charset=UTF-8
+
+Response headers:
+Response Headers: Content-type : text/xml; charset=utf-8
+#status# : HTTP/1.1 500 Internal Server Error
+Date : Tue, 24 Nov 2026 14:31:15 GMT
+Transfer-encoding : chunked

@@ -1,0 +1,47 @@
+Status: UNKNOWN
+Time Taken: 172
+Size: 422
+Timestamp: Tue Nov 24 14:31:15 GMT 2026
+TestStep: 03-EmprunterLivre-IsbnInvalide-SchemaValidation
+
+----------------- Messages ------------------------------
+
+----------------- Properties ------------------------------
+Endpoint: http://localhost:8080/bib/EmpruntService
+Encoding: UTF-8
+
+---------------- Request ---------------------------
+Request Headers: SOAPAction : http://supnum.mr/bib/emprunterLivre
+Connection : Keep-Alive
+User-Agent : Apache-HttpClient/4.5.5 (Java/17.0.12)
+Host : localhost:8080
+Accept-Encoding : gzip,deflate
+Content-Length : 311
+Content-Type : text/xml;charset=UTF-8
+
+
+<soap:Envelope xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/" xmlns:bib="http://supnum.mr/bib">
+   <soap:Header/>
+   <soap:Body>
+      <bib:emprunterLivre>
+         <bib:idAdherent>A-117</bib:idAdherent>
+         <bib:isbn>978-2-10</bib:isbn>
+      </bib:emprunterLivre>
+   </soap:Body>
+</soap:Envelope>
+
+---------------- Response --------------------------
+Response Headers: Content-type : text/xml; charset=utf-8
+#status# : HTTP/1.1 500 Internal Server Error
+Date : Tue, 24 Nov 2026 14:31:15 GMT
+Transfer-encoding : chunked
+
+
+<S:Envelope xmlns:S="http://schemas.xmlsoap.org/soap/envelope/">
+   <S:Body>
+      <S:Fault xmlns:ns4="http://www.w3.org/2003/05/soap-envelope">
+         <faultcode>S:Client</faultcode>
+         <faultstring>org.xml.sax.SAXParseException; cvc-pattern-valid: Value '978-2-10' is not facet-valid with respect to pattern '97[89]-\d-\d{2,5}-\d{2,6}-\d' for type 'IsbnType'.</faultstring>
+      </S:Fault>
+   </S:Body>
+</S:Envelope>
