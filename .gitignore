@@ -1,0 +1,15 @@
+# Build artifacts (Maven)
+target/
+*.class
+
+# IDE
+.idea/
+*.iml
+.vscode/
+
+# OS
+Thumbs.db
+.DS_Store
+
+# SoapUI local run leftovers (keep the actual evidence: project file, requests/, responses/, status/, raw-results/)
+*.log
