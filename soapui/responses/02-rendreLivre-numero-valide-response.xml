@@ -1,0 +1,7 @@
+<S:Envelope xmlns:S="http://schemas.xmlsoap.org/soap/envelope/">
+   <S:Body>
+      <ns2:rendreLivreResponse xmlns:ns2="http://supnum.mr/bib">
+         <penalite>0</penalite>
+      </ns2:rendreLivreResponse>
+   </S:Body>
+</S:Envelope>

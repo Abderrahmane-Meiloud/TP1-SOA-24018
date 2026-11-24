@@ -1,0 +1,53 @@
+Status: UNKNOWN
+Time Taken: 275
+Size: 443
+Timestamp: Tue Nov 24 14:22:10 GMT 2026
+TestStep: 05-EmprunterLivre-LivreIndisponible
+
+----------------- Messages ------------------------------
+
+----------------- Properties ------------------------------
+Endpoint: http://localhost:8080/bib/EmpruntService
+Encoding: UTF-8
+
+---------------- Request ---------------------------
+Request Headers: SOAPAction : ""
+Connection : Keep-Alive
+User-Agent : Apache-HttpClient/4.5.5 (Java/17.0.12)
+Host : localhost:8080
+Accept-Encoding : gzip,deflate
+Content-Length : 304
+Content-Type : text/xml;charset=UTF-8
+
+
+<soap:Envelope xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/" xmlns:bib="http://supnum.mr/bib">
+   <soap:Header/>
+   <soap:Body>
+      <bib:emprunterLivre>
+         <idAdherent>A-117</idAdherent>
+         <isbn>978-2-10-074444-4</isbn>
+      </bib:emprunterLivre>
+   </soap:Body>
+</soap:Envelope>
+
+---------------- Response --------------------------
+Response Headers: Content-type : text/xml; charset=utf-8
+#status# : HTTP/1.1 500 Internal Server Error
+Date : Tue, 24 Nov 2026 14:22:10 GMT
+Transfer-encoding : chunked
+
+
+<S:Envelope xmlns:S="http://schemas.xmlsoap.org/soap/envelope/">
+   <S:Body>
+      <S:Fault xmlns:ns4="http://www.w3.org/2003/05/soap-envelope">
+         <faultcode>S:Server</faultcode>
+         <faultstring>Livre indisponible</faultstring>
+         <detail>
+            <ns2:LivreIndisponible xmlns:ns2="http://supnum.mr/bib">
+               <isbn>978-2-10-074444-4</isbn>
+               <retourPrevu>2026-12-02</retourPrevu>
+            </ns2:LivreIndisponible>
+         </detail>
+      </S:Fault>
+   </S:Body>
+</S:Envelope>

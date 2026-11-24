@@ -1,0 +1,46 @@
+Status: UNKNOWN
+Time Taken: 1577
+Size: 298
+Timestamp: Tue Nov 24 14:22:08 GMT 2026
+TestStep: 03-RendreLivre-NumeroInconnu
+
+----------------- Messages ------------------------------
+
+----------------- Properties ------------------------------
+Endpoint: http://localhost:8080/bib/EmpruntService
+Encoding: UTF-8
+
+---------------- Request ---------------------------
+Request Headers: SOAPAction : ""
+Connection : Keep-Alive
+User-Agent : Apache-HttpClient/4.5.5 (Java/17.0.12)
+Host : localhost:8080
+Accept-Encoding : gzip,deflate
+Content-Length : 268
+Content-Type : text/xml;charset=UTF-8
+
+
+<soap:Envelope xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/" xmlns:bib="http://supnum.mr/bib">
+   <soap:Header/>
+   <soap:Body>
+      <bib:rendreLivre>
+         <numeroEmprunt>NOPE-9999</numeroEmprunt>
+      </bib:rendreLivre>
+   </soap:Body>
+</soap:Envelope>
+
+---------------- Response --------------------------
+Response Headers: Content-type : text/xml; charset=utf-8
+#status# : HTTP/1.1 500 Internal Server Error
+Date : Tue, 24 Nov 2026 14:22:09 GMT
+Transfer-encoding : chunked
+
+
+<S:Envelope xmlns:S="http://schemas.xmlsoap.org/soap/envelope/">
+   <S:Body>
+      <S:Fault xmlns:ns4="http://www.w3.org/2003/05/soap-envelope">
+         <faultcode>S:Client</faultcode>
+         <faultstring>Numéro d'emprunt inconnu : NOPE-9999</faultstring>
+      </S:Fault>
+   </S:Body>
+</S:Envelope>
